@@ -7,37 +7,34 @@ const w = d * 7;
 const y = d * 365.25;
 
 type Unit =
-  | 'Years'
-  | 'Year'
-  | 'Yrs'
-  | 'Yr'
-  | 'Y'
-  | 'Weeks'
-  | 'Week'
-  | 'W'
-  | 'Days'
-  | 'Day'
-  | 'D'
-  | 'Hours'
-  | 'Hour'
-  | 'Hrs'
-  | 'Hr'
-  | 'H'
-  | 'Minutes'
-  | 'Minute'
-  | 'Mins'
-  | 'Min'
-  | 'M'
-  | 'Seconds'
-  | 'Second'
-  | 'Secs'
-  | 'Sec'
-  | 's'
-  | 'Milliseconds'
-  | 'Millisecond'
-  | 'Msecs'
-  | 'Msec'
-  | 'Ms';
+  | 'Лет'
+  | 'Год'
+  | 'Л'
+  | 'Г'
+  | 'Недель'
+  | 'Неделя'
+  | 'Н'
+  | 'Дней'
+  | 'День'
+  | 'Дня'
+  | 'Д'
+  | 'Часов'
+  | 'Часа'
+  | 'Час'
+  | 'Ч'
+  | 'Минут'
+  | 'Минута'
+  | 'Минуты'
+  | 'Мин'
+  | 'М'
+  | 'Секунды'
+  | 'Секунда'
+  | 'Сек'
+  | 'С'
+  | 'Миллисекунд'
+  | 'Миллисекунда'
+  | 'Миллисекунды'
+  | 'Мс';
 
 type UnitAnyCase = Unit | Uppercase<Unit> | Lowercase<Unit>;
 
@@ -90,7 +87,7 @@ function parse(str: string): number {
     throw new Error('Value exceeds the maximum length of 100 characters.');
   }
   const match =
-    /^(?<value>-?(?:\d+)?\.?\d+) *(?<type>milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
+    /^(?<value>-?(?:\d+)?\.?\d+) *(?<type>миллисекунды?|мс?|секунд?|секунды?|секунда?|сек?|с|минуты?|минута?|минут?|мин?|м|часов?|часа?|час?|ч|дней?|дня?|день?|д|недель?|неделя?|нед|н|лет?|годов?|л)?$/i.exec(
       str,
     );
   // Named capture groups need to be manually typed today.
